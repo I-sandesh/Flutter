@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_catalog/utils/routes.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -20,7 +21,7 @@ class LoginPage extends StatelessWidget {
               Text(
                 "Welcome",
                 style: TextStyle(
-                  fontSize: 24,
+                  fontSize: 28,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -28,28 +29,33 @@ class LoginPage extends StatelessWidget {
                 height: 20.0,
               ),
               Padding(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 16.0, horizontal: 32.0),
+                padding: const EdgeInsets.symmetric(
+                    vertical: 16.0, horizontal: 32.0),
                 child: Column(
                   children: [
                     TextFormField(
                       decoration: InputDecoration(
-                          hintText: "Enter you Username", labelText: "Username"),
+                          hintText: "Enter you Username",
+                          labelText: "Username"),
                     ),
                     TextFormField(
                       obscureText: true,
                       decoration: InputDecoration(
-                          hintText: "Enter you Password", labelText: "Password"),
+                          hintText: "Enter you Password",
+                          labelText: "Password"),
                     ),
                     SizedBox(
-                      height: 20.0,
+                      height: 40.0,
                     ),
                     ElevatedButton(
                       onPressed: () {
-                        print("Hi! Sandesh");
+                        Navigator.pushNamed(
+                          context,
+                          MyRoutes.homeRoute,
+                        );
                       },
                       child: Text("Login"),
-                      style: TextButton.styleFrom(),
+                      style: TextButton.styleFrom(minimumSize: Size(150, 40)),
                     ),
                   ],
                 ),
